@@ -21,7 +21,7 @@ $( document ).ready( function() {
 	});
 
 	/* show about more  ======================================= */
-	$( '#show-btn' ).click(function() {
+	$( '#show-btn' ).click( function() {
 		$( '#showme' ).slideDown( 'slow' );
 		$( this ).hide();
 		return false;
@@ -53,20 +53,20 @@ $( document ).ready( function() {
 	var date = new Date();
 	var res = date.setTime( date.getTime() + ( days * 24 * 60 * 60 * 1000 ) );
 	
-	$( '#countdown' ).countdown(res, function(event) {
+	$( '#countdown' ).countdown( res, function( event ) {
 		$( this ).text(
 			event.strftime( '%-d days %H:%M:%S' )
 		);
 	});
 
 	/* Smooth Hash Link Scroll ======================================= */	
-	$( '.smooth-scroll' ).click(function() {
+	$( '.smooth-scroll' ).click( function() {
 		if ( location.pathname.replace( /^\//, '' ) == this.pathname.replace( /^\//, '' ) && location.hostname === this.hostname ) {
 			var target = $( this.hash );
 			target = target.length ? target : $( '[name=' + this.hash.slice(1) + ']' );
 			if ( target.length ) {
 				// console.log(offset());
-				$( 'html,body' ).animate({
+				$( 'html, body' ).animate({
 					scrollTop: target.offset().top - 60
 				}, 1000 );
 				return false;
@@ -121,7 +121,7 @@ $( document ).ready( function() {
 		$( this ).find( '.screen' ).removeClass( 'slides' ).removeClass( 'done' ).html( '' ).superslides( 'destroy' );
 	});
 
-	$( '#project-modal' ).on( 'click', '#btn-order',function () {
+	$( '#project-modal' ).on( 'click', '#btn-order', function () {
 		$( '#project-modal' ).modal( 'hide' );
 		$( this ).find( '.loader' ).show();
 		$( this ).find( '.screen' ).removeClass( 'slides' ).removeClass( 'done' ).html( '' ).superslides( 'destroy' );
@@ -132,12 +132,12 @@ $( document ).ready( function() {
 	});
 
 	/* style switch	==============================================*/
-	$( '#style-switcher h2 a' ).click(function(){
+	$( '#style-switcher h2 a' ).click( function(){
 		$( '#style-switcher' ).toggleClass( 'open' );
 		return false;
 	});
 
-	$( '#style-switcher li' ).click(function(e){
+	$( '#style-switcher li' ).click( function( e ){
 		e.preventDefault();
 		var m = $( this );
 		$( '.colors' ).attr( 'href', 'css/' + m.attr( 'id' ) + '.css' );
